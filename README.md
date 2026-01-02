@@ -1,4 +1,4 @@
-✅ DEVOPS LAB – PART-1
+# ✅ DEVOPS LAB – PART-1
 IAM User & Role Management (STEP-BY-STEP REFERENCE)
 🎯 Objective (What Part-1 Achieves)
 
@@ -14,7 +14,7 @@ Implement proper AWS IAM access control using:
 
 Verification via EC2 + AWS CLI
 
-🔹 STEP 1 — Create IAM User (Human Identity)
+## 🔹 STEP 1 — Create IAM User (Human Identity)
 ```
 Path:
 AWS Console → IAM → Users → Create user
@@ -41,7 +41,7 @@ IAM user created
 ```
 Represents a human developer
 
-🔹 STEP 2 — Create IAM Group (Team Identity)
+## 🔹 STEP 2 — Create IAM Group (Team Identity)
 ```
 Path:
 IAM → User groups → Create group
@@ -56,7 +56,7 @@ Outcome
 ```
 Group created to manage shared permissions
 ```
-🔹 STEP 3 — Add User to Group
+## 🔹 STEP 3 — Add User to Group
 ```
 Path:
 IAM → User groups → DevTeam → Add users
@@ -69,7 +69,7 @@ Outcome
 ```
 User inherits permissions assigned to the group
 ```
-🔹 STEP 4 — Attach EC2 Full Access to Group
+## 🔹 STEP 4 — Attach EC2 Full Access to Group
 ```
 Path:
 IAM → User groups → DevTeam → Permissions → Add permissions
@@ -88,7 +88,7 @@ Outcome
 ```
 Any user in DevTeam can manage EC2
 ```
-🔹 STEP 5 — Attach S3 Read-Only Access to User
+## 🔹 STEP 5 — Attach S3 Read-Only Access to User
 ```
 Path:
 IAM → Users → developer → Permissions → Add permissions
@@ -107,7 +107,7 @@ Outcome
 ```
 User can read S3 but cannot modify objects
 ```
-🔹 STEP 6 — Create IAM Role for EC2 (Service Identity)
+## 🔹 STEP 6 — Create IAM Role for EC2 (Service Identity)
 ```
 Path:
 IAM → Roles → Create role
@@ -137,7 +137,7 @@ Outcome
 ```
 EC2 instances can access S3 securely without keys
 ```
-🔹 STEP 7 — Launch EC2 Instance (Verification Instance)
+## 🔹 STEP 7 — Launch EC2 Instance (Verification Instance)
 ```
 Path:
 EC2 → Instances → Launch instance
@@ -160,7 +160,7 @@ Outcome
 ```
 EC2 instance running and reachable
 ```
-🔹 STEP 8 — Attach IAM Role to EC2
+## 🔹 STEP 8 — Attach IAM Role to EC2
 ```
 Path:
 EC2 → Instances → Select instance
@@ -174,7 +174,7 @@ Outcome
 ```
 EC2 now assumes IAM role automatically
 ```
-🔹 STEP 9 — Connect to EC2 (SSH)
+## 🔹 STEP 9 — Connect to EC2 (SSH)
 
 From local system
 ```
@@ -186,7 +186,7 @@ Expected prompt
 ```
 ec2-user@ip-172-31-x-x
 ```
-🔹 STEP 10 — Verify Role-Based Access (MOST IMPORTANT)
+## 🔹 STEP 10 — Verify Role-Based Access (MOST IMPORTANT)
 
 Identity verification
 ```
@@ -209,7 +209,7 @@ aws s3 ls
 ✔ Works without aws configure
 ✔ Confirms role permissions
 
-🔹 STEP 11 — Security Validation
+## 🔹 STEP 11 — Security Validation
 ```
 ls ~/.aws
 ```
@@ -225,17 +225,24 @@ No such file or directory
 ✅ PART-1 FINAL STATE (REFERENCE CHECKLIST)
 Item	Status:
 IAM user created	✅
+
 IAM group created	✅
+
 User added to group	✅
+
 EC2 full access via group	✅
+
 S3 read-only via user	✅
+
 IAM role for EC2 created	✅
+
 Role attached to EC2	✅
+
 Verified via STS	✅
 
 
 
-✅ DEVOPS LAB — PART-2
+# ✅ DEVOPS LAB — PART-2
 EC2 Deployment & Web Server Hosting
 
 Status: COMPLETED & VERIFIED
@@ -255,7 +262,7 @@ Deploy a publicly accessible web server on AWS using:
 - Browser-level verification
 
 🔹 STEP-BY-STEP REFERENCE (PART-2)
-🔹 STEP 1 — Launch EC2 Instance (Web Server)
+## 🔹 STEP 1 — Launch EC2 Instance (Web Server)
 ```
 Path:
 AWS Console → EC2 → Instances → Launch instance
@@ -276,7 +283,7 @@ Outcome
 ```
 EC2 instance created and reachable from the internet
 ```
-🔹 STEP 2 — Configure Network & Security Group
+## 🔹 STEP 2 — Configure Network & Security Group
 
 Security Group (newly created)
 
@@ -298,7 +305,7 @@ Outcome
 ```
 Instance accessible via SSH and browser
 ```
-🔹 STEP 3 — Add Mandatory Tags
+## 🔹 STEP 3 — Add Mandatory Tags
 
 Path:
 ```
@@ -313,7 +320,7 @@ Outcome
 ```
 Instance properly tagged for identification and evaluation
 ```
-🔹 STEP 4 — Launch Instance & Health Check
+## 🔹 STEP 4 — Launch Instance & Health Check
 ```
 Instance state: Running
 
@@ -323,7 +330,7 @@ Outcome
 ```
 Instance ready for configuration
 ```
-🔹 STEP 5 — Connect to EC2 via SSH
+## 🔹 STEP 5 — Connect to EC2 via SSH
 
 From local system
 ```
@@ -341,7 +348,7 @@ Outcome
 ```
 Secure shell access established
 ```
-🔹 STEP 6 — Install & Start Apache Web Server
+## 🔹 STEP 6 — Install & Start Apache Web Server
 ```
 sudo yum update -y
 sudo yum install httpd -y
@@ -363,7 +370,7 @@ Outcome
 ```
 Apache installed, running, and persistent across reboots
 ```
-🔹 STEP 7 — Deploy Web Content (HTML Page)
+## 🔹 STEP 7 — Deploy Web Content (HTML Page)
 
 Navigate to Apache web root
 ```
@@ -398,7 +405,7 @@ Outcome
 ```
 Web page created and readable by Apache
 ```
-🔹 STEP 8 — Browser Verification (Final Proof)
+## 🔹 STEP 8 — Browser Verification (Final Proof)
 
 Open browser and visit
 ```
@@ -416,15 +423,21 @@ Successful end-to-end validation
 ```
 ✅ PART-2 FINAL CHECKLIST
 Requirement	Status
+
 EC2 instance launched	✅
+
 Security group (SSH + HTTP)	✅
+
 Apache installed & running	✅
+
 HTML page deployed	✅
+
 Tags added	✅
+
 Webpage accessible via browser	✅
 
 
-✅ DEVOPS LAB — PART-3
+# ✅ DEVOPS LAB — PART-3
 AWS Lambda Basics & Logging
 
 Status: COMPLETED & VERIFIED
@@ -446,12 +459,12 @@ Understand and demonstrate:
 This part proves you understand how code runs without servers.
 
 🔹 STEP-BY-STEP REFERENCE (PART-3)
-🔹 STEP 1 — Open AWS Lambda Service
+## 🔹 STEP 1 — Open AWS Lambda Service
 ```
 Path:
 AWS Console → Search → Lambda → Create function
 ```
-🔹 STEP 2 — Create Lambda Function
+## 🔹 STEP 2 — Create Lambda Function
 
 Choose:
 ```
@@ -473,7 +486,7 @@ Lambda function created
 ```
 IAM execution role auto-created with CloudWatch access
 
-🔹 STEP 3 — Write Basic Lambda Code
+## 🔹 STEP 3 — Write Basic Lambda Code
 
 In the Code source editor, replace existing code with:
 ```
@@ -483,7 +496,7 @@ def lambda_handler(event, context):
 
 Click Deploy
 
-🔹 STEP 4 — Test the Lambda Function
+## 🔹 STEP 4 — Test the Lambda Function
 
 Click Test
 
@@ -507,7 +520,7 @@ Lambda executed successfully
 
 Serverless execution verified
 ```
-🔹 STEP 5 — Modify Lambda for Logging
+## 🔹 STEP 5 — Modify Lambda for Logging
 
 Update the code to demonstrate logging:
 ```
@@ -521,7 +534,7 @@ def lambda_handler(event, context):
 
 Click Deploy
 
-🔹 STEP 6 — Test Logging
+## 🔹 STEP 6 — Test Logging
 
 Click Test
 ```
@@ -535,7 +548,7 @@ This confirms:
 
 - Logs generated
 
-🔹 STEP 7 — View Logs in CloudWatch
+## 🔹 STEP 7 — View Logs in CloudWatch
 
 Path:
 ```
@@ -555,7 +568,7 @@ Examples:
 
 Each log stream = one Lambda invocation.
 
-🔹 STEP 8 — Verify Log Contents
+## 🔹 STEP 8 — Verify Log Contents
 
 Open the latest log stream and verify:
 ```
@@ -563,19 +576,27 @@ Current time: <timestamp>
 Lambda function name: basic-hello-lambda
 ```
 ✅ PART-3 FINAL CHECKLIST
+
 Requirement	Status
+
 Lambda function created	✅
+
 Python runtime used	✅
+
 Function tested	✅
+
 Output returned	✅
+
 CloudWatch log group created	✅
+
 Log streams visible	✅
+
 Execution details logged	✅
 
 
 
 
-✅ DEVOPS LAB — SECTION-5
+# ✅ DEVOPS LAB — SECTION-5
 Lambda to Rename Uploaded Files in S3
 
 Status: COMPLETED & VERIFIED
@@ -590,7 +611,7 @@ Automatically rename any file uploaded to an S3 bucket by:
 
 - Achieving this using AWS Lambda + S3 event triggers
 
-🧠 Architecture Overview
+## 🧠 Architecture Overview
 ```
 S3 Upload
    ↓
@@ -603,7 +624,7 @@ Copy Object (new name)
 Delete Original Object
 ```
 🔹 STEP-BY-STEP REFERENCE (SECTION-5)
-🔹 STEP 5.1 — Create S3 Bucket
+## 🔹 STEP 5.1 — Create S3 Bucket
 ```
 Path:
 AWS Console → S3 → Create bucket
@@ -620,7 +641,7 @@ Outcome
 
 Private S3 bucket ready for event triggers
 
-🔹 STEP 5.2 — Create Lambda Function
+## 🔹 STEP 5.2 — Create Lambda Function
 ```
 Path:
 AWS Console → Lambda → Create function → Author from scratch
@@ -638,7 +659,7 @@ Lambda function created
 
 IAM execution role auto-created
 ```
-🔹 STEP 5.3 — Grant S3 Permissions to Lambda
+## 🔹 STEP 5.3 — Grant S3 Permissions to Lambda
 ```
 Path:
 Lambda → Configuration → Permissions → Execution role → IAM
@@ -653,7 +674,7 @@ Lambda → Configuration → Permissions → Execution role → IAM
 
 (Least-privilege policies are implemented later in Section-7)
 
-🔹 STEP 5.4 — Implement Rename Logic (Lambda Code)
+## 🔹 STEP 5.4 — Implement Rename Logic (Lambda Code)
 
 Lambda → Code source
 ```
@@ -689,7 +710,7 @@ def lambda_handler(event, context):
 ```
 Click Deploy
 
-🔹 STEP 5.5 — Configure S3 Trigger
+## 🔹 STEP 5.5 — Configure S3 Trigger
 ```
 Method used (stable approach):
 S3 → Bucket → Properties → Event notifications
@@ -708,7 +729,7 @@ Outcome
 
 S3 automatically invokes Lambda on every upload
 
-🔹 STEP 5.6 — Verification (Proof of Completion)
+## 🔹 STEP 5.6 — Verification (Proof of Completion)
 
 Action
 
@@ -725,12 +746,19 @@ Optional
 CloudWatch logs show successful invocation
 
 ✅ SECTION-5 FINAL CHECKLIST
+
 Requirement	Status
+
 S3 bucket created	✅
+
 Lambda function created	✅
+
 S3 permissions granted	✅
+
 Rename logic implemented	✅
+
 S3 trigger configured	✅
+
 File renamed automatically	✅
 
 
@@ -750,7 +778,7 @@ Automatically move files in an S3 bucket such that:
 
 - No manual intervention is required
 
-🧠 Core Concept (Must Remember)
+## 🧠 Core Concept (Must Remember)
 
 S3 has no real folders
 
@@ -773,7 +801,7 @@ Copy object to processed/
 Delete object from incoming/
 ```
 🔹 STEP-BY-STEP REFERENCE (SECTION-6)
-🔹 STEP 6.1 — Prepare Folder Structure in S3
+## 🔹 STEP 6.1 — Prepare Folder Structure in S3
 ```
 Path:
 AWS Console → S3 → Bucket (same bucket as Section-5)
@@ -786,7 +814,7 @@ processed/
 
 These are logical prefixes, not actual directories.
 
-🔹 STEP 6.2 — Create Lambda Function
+## 🔹 STEP 6.2 — Create Lambda Function
 ```
 Path:
 AWS Console → Lambda → Create function → Author from scratch
@@ -798,7 +826,7 @@ Function name	s3-move-lambda
 Runtime	Python 3.9 / 3.10
 Permissions	Create new role with basic Lambda permissions
 ```
-🔹 STEP 6.3 — Grant S3 Permissions to Lambda
+## 🔹 STEP 6.3 — Grant S3 Permissions to Lambda
 ```
 Path:
 Lambda → Configuration → Permissions → Execution role → IAM
@@ -813,7 +841,7 @@ Lambda needs permission to copy and delete S3 objects
 
 (Least-privilege IAM policies are implemented later in Section-7)
 
-🔹 STEP 6.4 — Implement Move Logic (Lambda Code)
+## 🔹 STEP 6.4 — Implement Move Logic (Lambda Code)
 
 Lambda → Code tab → lambda_function.py
 ```
@@ -850,7 +878,7 @@ def lambda_handler(event, context):
 ```
 Click Deploy.
 
-🔹 STEP 6.5 — Configure S3 Trigger (Prefix-Based)
+## 🔹 STEP 6.5 — Configure S3 Trigger (Prefix-Based)
 
 Preferred stable method: Configure from S3 side
 ```
@@ -869,7 +897,7 @@ Lambda function	s3-move-lambda
 ```
 Save changes.
 
-🔹 STEP 6.6 — Verification (Proof of Completion)
+## 🔹 STEP 6.6 — Verification (Proof of Completion)
 
 Action
 Upload a file:
@@ -889,17 +917,23 @@ CloudWatch logs show successful Lambda invocation
 
 ✅ SECTION-6 FINAL CHECKLIST
 Requirement	Status
+
 incoming/ prefix exists	✅
+
 processed/ prefix exists	✅
+
 Lambda function created	✅
+
 S3 permissions granted	✅
+
 Prefix-based trigger configured	✅
+
 File moved automatically	✅
 
 
 
 
-✅ DEVOPS LAB — SECTION-7
+# ✅ DEVOPS LAB — SECTION-7
 S3 Bucket Access Isolation Using IAM Roles (EC2)
 
 Status: COMPLETED & VERIFIED
@@ -936,7 +970,7 @@ This proves understanding of:
 
 - Secure cloud design
 
-🧠 Core Concepts (DO NOT SKIP)
+## 🧠 Core Concepts (DO NOT SKIP)
 1️⃣ IAM Role vs IAM User
 ```
 IAM User → long-term credentials (NOT used here)
@@ -970,7 +1004,7 @@ EC2-B ──(ProjectBucketRole)──► project-bucket-b
 No cross-access allowed.
 
 🔹 STEP-BY-STEP REFERENCE (SECTION-7)
-🔹 STEP 7.1 — Create Two S3 Buckets
+## 🔹 STEP 7.1 — Create Two S3 Buckets
 ```
 Path:
 AWS Console → S3 → Create bucket
@@ -993,7 +1027,7 @@ Block public access: Enabled
 
 Bucket names must be globally unique
 ```
-🔹 STEP 7.2 — Create IAM Role-A (TrainingBucketRole)
+## 🔹 STEP 7.2 — Create IAM Role-A (TrainingBucketRole)
 ```
 Path:
 IAM → Roles → Create role
@@ -1006,7 +1040,7 @@ Use case: EC2
 
 Role name: TrainingBucketRole
 ```
-🔹 STEP 7.3 — Configure Trust Policy (Role-A)
+## 🔹 STEP 7.3 — Configure Trust Policy (Role-A)
 
 IAM → Roles → TrainingBucketRole → Trust relationships → Edit
 ```
@@ -1027,7 +1061,7 @@ Meaning
 
 Allows EC2 instances to assume this role
 
-🔹 STEP 7.4 — Attach Inline Permission Policy (Role-A)
+## 🔹 STEP 7.4 — Attach Inline Permission Policy (Role-A)
 
 IAM → Roles → TrainingBucketRole → Permissions → Create inline policy
 ```
@@ -1059,7 +1093,7 @@ Policy name:
 ```
 TrainingBucketPolicy
 ```
-🔹 STEP 7.5 — Create IAM Role-B (ProjectBucketRole)
+## 🔹 STEP 7.5 — Create IAM Role-B (ProjectBucketRole)
 
 Repeat Role creation steps.
 
@@ -1068,7 +1102,7 @@ Role name:
 ProjectBucketRole
 ```
 
-🔹 STEP 7.6 — Configure Trust Policy (Role-B)
+## 🔹 STEP 7.6 — Configure Trust Policy (Role-B)
 ```
 {
   "Version": "2012-10-17",
@@ -1083,7 +1117,7 @@ ProjectBucketRole
   ]
 }
 ```
-🔹 STEP 7.7 — Attach Inline Permission Policy (Role-B)
+## 🔹 STEP 7.7 — Attach Inline Permission Policy (Role-B)
 ```
 {
   "Version": "2012-10-17",
@@ -1112,7 +1146,7 @@ Policy name:
 ```
 ProjectBucketPolicy
 ```
-🔹 STEP 7.8 — Launch Two EC2 Instances
+## 🔹 STEP 7.8 — Launch Two EC2 Instances
 EC2-A (Training)
 ```
 Name: ec2-training
@@ -1133,7 +1167,7 @@ IAM Role: ProjectBucketRole
 
 Security Group: SSH allowed
 ```
-🔹 STEP 7.9 — Verify Role Assumption (MANDATORY)
+## 🔹 STEP 7.9 — Verify Role Assumption (MANDATORY)
 Inside EC2-A
 ```
 aws sts get-caller-identity
@@ -1152,7 +1186,7 @@ Must show:
 ```
 assumed-role/ProjectBucketRole
 ```
-🔹 STEP 7.10 — Verify Bucket Access (PROOF)
+## 🔹 STEP 7.10 — Verify Bucket Access (PROOF)
 EC2-A
 ```
 aws s3 ls s3://training-bucket-a-<unique>    # ✅ Allowed
@@ -1164,14 +1198,23 @@ aws s3 ls s3://project-bucket-b-<unique>     # ✅ Allowed
 aws s3 ls s3://training-bucket-a-<unique>    # ❌ AccessDenied
 ```
 ✅ SECTION-7 FINAL CHECKLIST
+
 Requirement	Status
+
 Two S3 buckets created	✅
+
 Two IAM roles created	✅
+
 Correct trust policies	✅
+
 Inline allow + explicit deny	✅
+
 Roles attached to EC2	✅
+
 Correct role assumed	✅
+
 Cross-bucket access denied	✅
+
 
 
 
